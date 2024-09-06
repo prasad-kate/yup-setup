@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-direction: column;
+  margin-top: 50px; /* sample values */
+}
+
+.form-field-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.error-field {
+  color: red;
+  font-size: 12px;
+}
+
+.submit-button {
+  padding: 5px 20px;
+}
+
+.text-input {
+  padding: 4px 6px;
+}
