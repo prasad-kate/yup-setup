@@ -1,20 +1,28 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import "./App.css";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { userSchema } from "./schemas/user.schema";
 
 function App() {
   interface FormValues {
-    last_name: string;
     first_name: string;
+    last_name: string;
   }
 
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormValues>();
+  } = useForm<FormValues>({
+    defaultValues: {
+      first_name: "",
+      last_name: "",
+    },
+    resolver: yupResolver(userSchema),
+  });
 
   const onSubmit: SubmitHandler<FormValues> = (data) => {
-    console.log(data);
+    alert(`Success: ${JSON.stringify(data)}`);
   };
 
   return (
